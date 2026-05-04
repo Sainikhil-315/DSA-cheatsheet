@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap');
+
+@import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-gray-950 text-gray-100;
+  line-height: 1.6;
+}
+
+/* Custom utility classes for styling */
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-jetbrains {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom hover effects */
+a {
+  @apply transition-all duration-150;
+}
+
+/* Grid gap adjustment for cards */
+.grid {
+  grid-auto-flow: dense;
+}
