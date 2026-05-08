@@ -4,16 +4,12 @@ import { PATTERNS } from '../data/dsaData';
 
 export default function PatternSection() {
   return (
-    <section className="mb-10 bg-gray-900 border border-gray-700 rounded-lg overflow-hidden" id="patterns">
-      <div className="flex items-center gap-3 p-3 bg-gray-950 border-b border-gray-700">
-        <span className="font-mono text-xs bg-yellow-400 text-black px-2 py-0.5 rounded font-bold">
-          15
-        </span>
-        <h2 className="text-base font-bold uppercase tracking-wide text-white">
-          Pattern Recognition — See this → Think that
-        </h2>
+    <section className="dsa-section" id="patterns">
+      <div className="dsa-section-header">
+        <span className="dsa-num">15</span>
+        <h2>Pattern Recognition — See this → Think that</h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+      <div className="dsa-pattern-grid">
         {PATTERNS.map((pattern, idx) => (
           <PatternItem key={idx} pattern={pattern} />
         ))}

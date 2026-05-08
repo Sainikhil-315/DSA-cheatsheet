@@ -3,8 +3,7 @@ export const dsaContent = {
   header: {
     title: 'DSA',
     subtitle: 'Quick Revision',
-    meta: "HackWithInfy Round 2 · Nikh's Cheat Sheet",
-    badge: '⚡ Tonight\'s Prep',
+    meta: "For any interview prep",
   },
   
   toc: [
@@ -528,8 +527,8 @@ export const dsaContent = {
         '4. Code brute if optimal not obvious. Partial marks > no submission.',
         '5. Edge cases: empty input, n=1, all same elements, INT overflow (use long long).',
       ],
-      credit: 'You\'ve got this, Nikh.',
-      event: 'HackWithInfy Round 2 · May 2026',
+      credit: 'You\'ve got this.',
+      event: 'Give your ultimate best',
     },
   },
 };

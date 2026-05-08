@@ -10,15 +10,11 @@ export default function GamePlan() {
   ];
 
   return (
-    <div className="mt-8 p-5 bg-yellow-950 bg-opacity-20 border border-yellow-400 border-opacity-30 rounded">
-      <div className="text-sm font-bold text-yellow-400 mb-3 font-mono">
-        ⚡ TOMORROW GAME PLAN
-      </div>
-      <div className="text-sm text-gray-400 leading-8 font-mono space-y-2">
+    <div className="dsa-gameplan">
+      <div className="dsa-gameplan-title">⚡ TOMORROW GAME PLAN</div>
+      <div className="dsa-gameplan-steps">
         {steps.map((step, idx) => (
-          <div key={idx}>
-            {idx + 1}. {step}
-          </div>
+          <div key={idx}>{idx + 1}. {step}</div>
         ))}
       </div>
     </div>

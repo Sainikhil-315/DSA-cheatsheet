@@ -24,7 +24,7 @@ import {
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans" style={{ fontFamily: "'Syne', sans-serif" }}>
-      <div className="max-w-6xl mx-auto px-8 py-8">
+      <div className="screen-size">
         <Header />
         <TOC />
 

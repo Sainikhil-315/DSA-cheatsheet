@@ -2,41 +2,331 @@
 
 @import "tailwindcss";
 
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --border: #1e1e2e;
+  --accent: #f0c040;
+  --accent2: #40c8f0;
+  --accent3: #f04060;
+  --green: #40f090;
+  --text: #e0e0f0;
+  --muted: #666688;
+  --dark-bg: #13131e;
+}
+
 body {
-  @apply bg-gray-950 text-gray-100;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
   line-height: 1.6;
 }
 
-/* Custom utility classes for styling */
-.font-syne {
-  font-family: 'Syne', sans-serif;
-}
-
-.font-jetbrains {
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom hover effects */
 a {
-  @apply transition-all duration-150;
+  transition: all 0.15s;
 }
 
-/* Grid gap adjustment for cards */
-.grid {
-  grid-auto-flow: dense;
+.screen-size {
+    padding: 20px;
+}
+
+/* Section */
+.dsa-section {
+  margin-bottom: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dsa-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  background: #13131e;
+  border-bottom: 1px solid var(--border);
+}
+
+.dsa-section-header h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.dsa-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  background: var(--accent);
+  color: #000;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+/* Cards grid */
+.dsa-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+}
+
+.dsa-card {
+  padding: 1rem 1.25rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.dsa-card h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent2);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dsa-card h3::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+.dsa-card ul {
+  list-style: none;
+  font-size: 0.82rem;
+  color: #b0b0c8;
+  line-height: 1.7;
+}
+
+.dsa-card ul li::before {
+  content: '·  ';
+  color: var(--muted);
+}
+
+.dsa-brute {
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(240, 64, 96, 0.08);
+  border-left: 2px solid var(--accent3);
+  border-radius: 0 3px 3px 0;
+  font-size: 0.78rem;
+  color: #c080a0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.dsa-brute strong {
+  color: var(--accent3);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dsa-tip {
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(64, 240, 144, 0.06);
+  border-left: 2px solid var(--green);
+  border-radius: 0 3px 3px 0;
+  font-size: 0.78rem;
+  color: #80c0a0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.dsa-tip strong {
+  color: var(--green);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* TOC */
+.dsa-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.dsa-toc a {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent2);
+  text-decoration: none;
+  padding: 0.35rem 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+
+.dsa-toc a:hover {
+  border-color: var(--accent2);
+  background: #1a2030;
+}
+
+/* Pattern grid */
+.dsa-pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+}
+
+.dsa-pattern-item {
+  padding: 0.85rem 1.25rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.dsa-pattern-item h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.dsa-pattern-item p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.dsa-signal {
+  font-size: 0.72rem;
+  color: var(--accent2);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 0.25rem;
+}
+
+/* Complexity table */
+.dsa-complexity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+}
+
+.dsa-complexity-table th {
+  background: #0d0d18;
+  color: var(--muted);
+  padding: 0.4rem 0.75rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dsa-complexity-table td {
+  padding: 0.35rem 0.75rem;
+  color: #b0b0c8;
+  border-bottom: 1px solid #1a1a28;
+}
+
+.dsa-complexity-table tr:hover td {
+  background: #14141f;
+}
+
+.tc-on { color: var(--green); }
+.tc-on2 { color: var(--accent); }
+.tc-ologn { color: var(--accent2); }
+.tc-onlogn { color: #a0c0ff; }
+.tc-on2c { color: var(--accent3); }
+
+/* Header */
+.dsa-header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dsa-header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.dsa-header h1 span {
+  color: var(--accent);
+}
+
+.dsa-header-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.dsa-badge {
+  background: var(--accent3);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Game plan */
+.dsa-gameplan {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: rgba(240, 192, 64, 0.06);
+  border: 1px solid rgba(240, 192, 64, 0.2);
+  border-radius: 6px;
+}
+
+.dsa-gameplan-title {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.dsa-gameplan-steps {
+  font-size: 0.82rem;
+  color: #a0a0c0;
+  line-height: 1.9;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Footer */
+.dsa-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.dsa-footer span {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .dsa-header h1 { font-size: 1.6rem; }
+  .dsa-cards { grid-template-columns: 1fr; }
 }
